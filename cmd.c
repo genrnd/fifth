@@ -173,6 +173,46 @@ int fifth_rand( struct fifth *f )
   return 0;
 }
 
+// addr -- value
+int fifth_peek( struct fifth *f )
+{
+  uint8_t addr = stack_pop( &f->stack );
+  stack_push( &f->stack, f->stack.data[addr] );
+
+  return 0;
+}
+
+// value addr --
+int fifth_poke( struct fifth *f )
+{
+  uint8_t addr = stack_pop( &f->stack );
+  uint8_t value = stack_pop( &f->stack );
+
+  f->stack.data[addr] = value;
+
+  return 0;
+}
+
+// addr -- value
+int fifth_tpeek( struct fifth *f )
+{
+  uint8_t addr = stack_pop( &f->stack );
+  stack_push( &f->stack, f->text.data[addr] );
+
+  return 0;
+}
+
+// value addr --
+int fifth_tpoke( struct fifth *f )
+{
+  uint8_t addr = stack_pop( &f->stack );
+  uint8_t value = stack_pop( &f->stack );
+
+  f->text.data[addr] = value;
+
+  return 0;
+}
+
 struct fifth_cmd cmds[] = {
   // stack ops
   [0x0] =  { "push",    0x00, 1, 0, fifth_push },
@@ -213,6 +253,12 @@ struct fifth_cmd cmds[] = {
   [0x50] = { "nop",     0x50, 0, 0, fifth_nop },
   [0x51] = { "print",   0x51, 0, 1, fifth_print }, 
   [0x52] = { "rand",    0x52, 0, 1, fifth_rand }, 
+
+  // ram
+  [0x60] = { "peek",    0x60, 0, 1, fifth_peek },
+  [0x61] = { "poke",    0x61, 0, 2, fifth_poke },
+  [0x62] = { "tpeek",   0x62, 0, 1, fifth_tpeek },
+  [0x63] = { "tpoke",   0x63, 0, 2, fifth_tpoke },
 };
 
 uint8_t fifth_cmd_num( )
