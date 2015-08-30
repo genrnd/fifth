@@ -1,0 +1,8 @@
+
+  * cmd.c -- basic commands for working with stack
+  * gcmd.c -- commands which work with graphical primitives
+  * fifth.c -- fifth top-level
+  * examples/ -- example programs in bytes codes and in mnemonic notation
+  * Makefile -- build file
+  * scripts/ -- scripts for convert of mnemonic to byte codes
+

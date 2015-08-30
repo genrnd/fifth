@@ -1,0 +1,17 @@
+
+How to run examples?
+
+1) Build application:
+
+  make -C ../
+
+2.1) Run examples (without verbose):
+
+  ../../converter/text2bin.py for5to1.txt | ../fifth 2>/dev/null
+  ../../converter/text2bin.py factorial.txt | ../fifth 2>/dev/null
+
+2.2) Run examples (with verbose -- stack and commands):
+
+  ../../converter/text2bin.py for5to1.txt | ../fifth 
+  ../../converter/text2bin.py factorial.txt | ../fifth 
+

@@ -1,0 +1,53 @@
+fifth (0.0.1) unstable; urgency=low
+
+    + Makefile.unix: build for UNIX (make -f Makefile.unix) [pk]
+    * gcmd.c:
+        Function to draw colored char.
+      [sk]
+
+    * stack.{c,h}:
+        Function that writes to any place of stack
+      [sk]
+
+  2015/08/28
+    * cmd.c:   
+        Deleted rect & square commands.
+        Adde lrect, mrect & brect commands.
+      [dg]
+
+    ! cmd.c:   
+        Fixed rot and over commands.
+      [dg]
+
+    * cmd.{c,h} 
+      gcmd.{c,h}:
+      scripts/text2bin.py:  
+        Add square and rand commands.
+        Now rect command need 5 params -- x, y, width, height, color.
+      [dg]
+
+  2015/08/27
+    * examples/
+        Bin files deleted. Add pseudo pong example.
+      [dg]
+
+  2015/08/25
+    + gcmd.c,
+      gcmd.h: added more commands (fill, rect, char, led, sound, delay)
+      [pk]
+  2015/08/24
+    + cmd.c cmd.h: fifth.c was divided by some parts [pk]
+    * examples/*
+        Added README and text examples.
+      [dg]
+
+  2015/08/21
+    * fifth.c: printing PC before each command [pk]
+  2015/08/20
+    * fifth.c: added dec, inc commands [dg,pk]
+    * fifth.c: added rot, over commands [dg,pk]
+    + examples:for5to1: simple for-loop [dg,pk]
+    * added commands: dup, swap, add, sub, eq, ne, lt, gt, print, goto,
+                      cjump, nop [dg, pk]
+
+ -- Pavel Kurochkin <pk@metrotek.spb.ru>  Thu, 20 Aug 2015 18:35:59 +0300

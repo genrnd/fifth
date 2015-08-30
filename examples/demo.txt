@@ -1,0 +1,141 @@
+# Draw mrect (x, y, col)
+push 60 
+push 10
+push 0
+mrect
+
+# Char 'D' (x, y, col, sym)
+push 100
+push 10
+push 0
+push 1
+push 68
+char
+
+# Char 'E'
+push 115
+push 10
+push 0
+push 1
+push 69 
+char
+
+# Char 'M'
+push 130
+push 10
+push 0
+push 1
+push 77
+char
+
+# Char '0'
+push 145
+push 10
+push 0
+push 1
+push 79  
+char
+
+# Draw srect (x, y, col)
+push 175
+push 10
+push 0
+lrect
+
+# Delay 1 sec
+push 100
+delay
+
+push 50
+sound
+
+# start point (x)
+push 180
+
+# duplicate of start point (one will be popped, and seconds will 
+# be used for calculation of new coordinate)
+dup 
+
+# y point = const
+push 100
+
+# rect color (green?)
+push 2
+
+# fill screen with blue color
+push 1
+fill
+
+# draw rect
+brect
+
+# decrement x-coord by 3
+push 3
+sub
+dup
+
+# check x limit
+push 10
+
+# if > 10, jump to addr=2
+gt
+push 66
+cjump
+
+# x<=10, we should change direction
+drop
+
+# x start point, again
+push 10
+dup
+
+# y point. from this point algorithm is same as above, excl.
+# that x-coordinate is incremented
+push 100
+push 2
+push 1
+fill
+brect
+push 3
+add
+dup
+push 180
+lt
+push 88
+cjump
+drop
+push 1
+fill
+
+push 0
+push 0
+over
+over
+led
+push 1
+add
+dup
+push 8
+lt 
+push 115
+cjump
+drop
+push 1
+add
+push 0
+swap
+dup
+rot
+rot
+push 4
+lt
+push 115
+cjump
+drop
+drop
+push 0
+goto
+
+
+
+

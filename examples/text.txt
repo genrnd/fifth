@@ -1,0 +1,39 @@
+# Draw mrect (x, y, col)
+push 60 
+push 10
+push 0
+mrect
+
+# Char 'D' (x, y, col, sym)
+push 100
+push 10
+push 0
+push 68
+char
+
+# Char 'E'
+push 115
+push 10
+push 0
+push 69 
+char
+
+# Char 'M'
+push 130
+push 10
+push 0
+push 77
+char
+
+# Char '0'
+push 145
+push 10
+push 0
+push 79  
+char
+
+# Draw srect (x, y, col)
+push 175
+push 10
+push 0
+lrect

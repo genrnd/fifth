@@ -1,0 +1,57 @@
+# start point (x)
+push 200
+
+# duplicate of start point (one will be popped, and seconds will 
+# be used for calculation of new coordinate)
+dup 
+
+# y point = const
+push 100
+
+# rect color (green?)
+push 2
+
+# fill screen with blue color
+push 1
+fill
+
+# draw rect
+brect
+
+# decrement x-coord by 3
+push 3
+sub
+dup
+
+# check x limit
+push 10
+
+# if > 10, jump to addr=2
+gt
+push 2
+cjump
+
+# x<=10, we should change direction
+drop
+
+# x start point, again
+push 10
+dup
+
+# y point. from this point algorithm is same as above, excl.
+# that x-coordinate is incremented
+push 100
+push 2
+push 1
+fill
+brect
+push 3
+add
+dup
+push 200
+lt
+push 24
+cjump
+drop
+push 0
+goto 

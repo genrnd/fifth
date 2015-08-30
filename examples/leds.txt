@@ -1,0 +1,30 @@
+push 0
+push 0
+over
+over
+led
+push 1
+add
+dup
+push 8
+lt 
+push 4
+cjump
+drop
+push 1
+add
+push 0
+swap
+dup
+rot
+rot
+push 4
+lt
+push 4
+cjump
+drop
+drop
+push 0
+goto
+
+

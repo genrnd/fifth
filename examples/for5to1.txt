@@ -1,0 +1,9 @@
+push 5
+print
+push 1
+sub
+dup
+push 0
+ne
+push 2
+cjump
