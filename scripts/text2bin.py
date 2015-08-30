@@ -35,7 +35,11 @@ def verify_command( command ):
                         "delay"   : 0,
                         "led"     : 0,
                         "sound"   : 0,
-                        "rand"    : 0 }
+                        "rand"    : 0,
+                        "peek"    : 0,
+                        "poke"    : 0,
+                        "tpeek"   : 0,
+                        "tpoke"   : 0}
 
   try:
     arg_cnt = cmd_args_cnt_dict[ command ]
@@ -142,6 +146,10 @@ def convert_cmd( line ):
                      "nop"     : 0x50,
                      "print"   : 0x51,
                      "rand"    : 0x52,
+                     "peek"    : 0x60,
+                     "poke"    : 0x61,
+                     "tpeek"   : 0x62,
+                     "tpoke"   : 0x63,
                      }
 
   try:
