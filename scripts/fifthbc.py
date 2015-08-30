@@ -53,7 +53,7 @@ def verify_command( command ):
 #
 def verify_arg( arg ):
   try:
-    int( arg )
+    int( arg, 0 )
     return 0
   except:
     return -1
@@ -164,7 +164,7 @@ def convert_cmd( line ):
 
   arg_packer = struct.Struct( 'B' )
   for arg in args:
-    arg_bin = arg_packer.pack( int( arg ) )
+    arg_bin = arg_packer.pack( int( arg, 0 ) )
     os.write( sys.stdout.fileno(), arg_bin )
       
 ##
