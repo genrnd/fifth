@@ -81,7 +81,7 @@ int fifth_char( struct fifth *f )
   vga_set_colors( _fg_color, _bg_color );
 
 #else
-  printf( "Character %c at %u, %u color %u\n", c, x, y, color );
+  printf( "Character %c at %u, %u color %u\n", c, x, y, fg_color );
 #endif
   return 0;
 }
